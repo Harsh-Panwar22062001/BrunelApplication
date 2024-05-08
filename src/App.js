@@ -1,18 +1,26 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
+import Home from "./Components/HomePage/Home";
 
 
-function App() {
+
+const App = () => {
   return (
-    <Router>
+    <>
       <Routes>
-        <Route path="/">
-          
-        </Route>
-        <Route path="/" element={<section className="flex flex-col justify-center items-center lg:px-5 px-2 pt-5"><CallToAction/></section>} />
+        <Route path="/" element={ <Home/>} />
+       
       </Routes>
-    </Router>
+    </>
   );
-}
+};
 
-export default App;
+const AppRouter = () => {
+  return (
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  );
+};
+
+export default AppRouter;

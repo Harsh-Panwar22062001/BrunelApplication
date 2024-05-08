@@ -1,5 +1,5 @@
 import React from "react";
-import Copyright from "../../assets/images/copyright.svg";
+import Copyright from "../../Assests/Images/copyright.svg";
 
 const Footer = () => {
   return (
