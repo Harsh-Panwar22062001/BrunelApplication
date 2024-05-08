@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./Components/HomePage/Home";
+import SuccessPage from "./Components/SuccessPage";
 
 
 
@@ -9,6 +10,7 @@ const App = () => {
     <>
       <Routes>
         <Route path="/" element={ <Home/>} />
+        <Route path="/success" element={<SuccessPage/>} />
        
       </Routes>
     </>

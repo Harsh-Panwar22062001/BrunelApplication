@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Plus from "../../Assests/Images/plus.svg"; // Corrected import path
-import Minus from "../../Assests/Images/minus.svg"; // Corrected import path
+import Plus from "../../Assests/Images/plus.svg"; 
+import Minus from "../../Assests/Images/minus.svg"; 
 
 const Accordion = ({ questions }) => {
   const [openIndexes, setOpenIndexes] = useState([]);

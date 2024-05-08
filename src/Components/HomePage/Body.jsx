@@ -3,7 +3,7 @@ import GirlImg from "../../Assests/Images/girl.svg";
 import Spark from "../../Assests/Images/spark.svg";
 import Rocket from "../../Assests/Images/rocket.svg";
 import Carasoul from "../../Assests/Images/carasoul.svg"; // Corrected import name
-import AskData from "../AccordianSection/AskData";
+// import AskData from "../AccordianSection/AskData";
 
 const Body = () => {
   return (
@@ -57,7 +57,7 @@ const Body = () => {
         </div>
       </div>
 
-      <AskData/>
+      {/* <AskData/> */}
     </>
   );
 };
