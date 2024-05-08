@@ -3,7 +3,8 @@ import Logo from "../../Assests/Images/logo.svg";
 import Cancel from "../../Assests/Images/cancel.svg";
 import Error from "../../Assests/Images/error.svg";
 import { useNavigate } from "react-router-dom";
-import './register.css'
+import './register.css';
+import { motion } from "framer-motion"; // Import motion from Framer Motion
 
 const Register = () => {
   const [formdata, setFormdata] = useState({
@@ -27,9 +28,15 @@ const Register = () => {
     }
   }, [formdata.email, formdata.name]);
 
+  useEffect(() => {
+    const storedAnimation = sessionStorage.getItem("animationShown");
+    if (!storedAnimation) {
+      sessionStorage.setItem("animationShown", "true");
+    }
+  }, []);
+
   const handleData = (e) => {
     e.preventDefault();
-
     setFormdata((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
@@ -50,14 +57,14 @@ const Register = () => {
 
   return (
     <>
-      <header className="register_header">
+      <motion.header className="register_header" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
         <img src={Logo} alt="logo" />
         <a href="/">
           <img src={Cancel} alt="cancel" />
         </a>
-      </header>
+      </motion.header>
 
-      <div className="register_form">
+      <motion.div className="register_form" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
         <h4>Registration Form</h4>
         <h4>
           Start your success <br /> journey here
@@ -79,15 +86,15 @@ const Register = () => {
           />
 
           {error && (
-            <p className="error">
+            <motion.p className="error" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
               <span>
                 <img src={Error} alt="img" />
               </span>
               Enter a valid email address
-            </p>
+            </motion.p>
           )}
 
-          <button
+          <motion.button
             type="submit"
             className="submit_btn"
             disabled={disable}
@@ -100,11 +107,12 @@ const Register = () => {
                       "linear-gradient(97.55deg, #1c1c1c 2.63%, #454444 105.2%), linear-gradient(0deg, #c9c9c9, #c9c9c9)",
                   }
             }
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }}
           >
             Submit
-          </button>
+          </motion.button>
         </form>
-      </div>
+      </motion.div>
     </>
   );
 };

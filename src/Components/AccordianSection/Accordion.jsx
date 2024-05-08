@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import Plus from "../../Assests/Images/plus.svg"; 
-import Minus from "../../Assests/Images/minus.svg"; 
+import { motion } from "framer-motion"; // Import motion from Framer Motion
+import Plus from "../../Assests/Images/plus.svg";
+import Minus from "../../Assests/Images/minus.svg";
 
 const Accordion = ({ questions }) => {
   const [openIndexes, setOpenIndexes] = useState([]);
@@ -18,7 +19,13 @@ const Accordion = ({ questions }) => {
   return (
     <div className="accordion">
       {questions.map((question, index) => (
-        <div className="accordion_section" key={index}>
+        <motion.div
+          className="accordion_section"
+          key={index}
+          initial={{ opacity: 0, y: -10 }} // Initial animation properties
+          animate={{ opacity: 1, y: 0 }} // Animation properties when component is visible
+          transition={{ duration: 0.5 }} // Transition duration
+        >
           <div
             className="accordion_header"
             onClick={() => toggleSection(index)}
@@ -32,9 +39,15 @@ const Accordion = ({ questions }) => {
             )}
           </div>
           {openIndexes.includes(index) && (
-            <p className="accordion_content">{question.content}</p>
+            <motion.p
+              className="accordion_content"
+              initial={{ height: 0 }} // Initial height of the content (collapsed)
+              animate={{ height: "auto" }} // Animation to expand the content
+            >
+              {question.content}
+            </motion.p>
           )}
-        </div>
+        </motion.div>
       ))}
     </div>
   );

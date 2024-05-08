@@ -1,8 +1,9 @@
 import React from "react";
+import { motion } from "framer-motion"; // Import motion from Framer Motion
 import GirlImg from "../../Assests/Images/girl.svg";
 import Spark from "../../Assests/Images/spark.svg";
 import Rocket from "../../Assests/Images/rocket.svg";
-import Carasoul from "../../Assests/Images/carasoul.svg"; // Corrected import name
+import Carasoul from "../../Assests/Images/carasoul.svg"; 
 import AskData from "../AccordianSection/AskData";
 
 const Body = () => {
@@ -18,9 +19,9 @@ const Body = () => {
 
         <div className="banner_bottom">
           <div className="img_section">
-            <img src={GirlImg} alt="img" />
+            <motion.img src={GirlImg} alt="img" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }} />
             <div className="first_box">
-              <img src={Spark} alt="img" />
+              <motion.img src={Spark} alt="img" initial={{ x: -100 }} animate={{ x: 0 }} transition={{ duration: 1 }} />
               <h3 style={{ fontSize: "64px" }}>40%</h3>
               <p>
                 Achieved reduction in project execution time by optimising team
@@ -29,7 +30,7 @@ const Body = () => {
             </div>
 
             <div className="second_box">
-              <img src={Rocket} alt="rocket" />
+              <motion.img src={Rocket} alt="rocket" initial={{ x: -100 }} animate={{ x: 0 }} transition={{ duration: 1 }} />
               <div>
                 <h4>10 DAYS</h4>
                 <p>Staff Deployment</p>
@@ -51,8 +52,8 @@ const Body = () => {
             <h4>
               Enhance fortune 50 company’s insights teams research capabilities
             </h4>
-            <img src={Carasoul} alt="carousel" className="carousel" /> {/* Corrected alt and className */}
-            <button className="btn">Explore more ➡</button>
+            <motion.img src={Carasoul} alt="carousel" className="carousel" initial={{ y: -100 }} animate={{ y: 0 }} transition={{ duration: 1 }} />
+            <motion.button className="btn" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>Explore more ➡</motion.button>
           </div>
         </div>
       </div>
