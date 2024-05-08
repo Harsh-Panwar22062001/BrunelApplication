@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../../Assests/Images/Excited_Girl.png";
+import Logo from "../../Assests/Images/logo.svg";
 import { useNavigate } from "react-router-dom";
 
 const Header = () => {
