@@ -1,6 +1,6 @@
 import React from "react";
 import Img from "../../Assests/Images/Union.svg"; // Corrected import path
-import Accordion from "../../Components/AccordianSection/AskData";
+import Accordion from "./Accordion";
 
 const AskData = () => {
   const questions = [
