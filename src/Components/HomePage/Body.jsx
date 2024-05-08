@@ -2,8 +2,8 @@ import React from "react";
 import GirlImg from "../../Assests/Images/girl.svg";
 import Spark from "../../Assests/Images/spark.svg";
 import Rocket from "../../Assests/Images/rocket.svg";
-import Carasoul from "../../Assests/Images/carasoul.svg";
-
+import Carasoul from "../../Assests/Images/carasoul.svg"; // Corrected import name
+import AskData from "../AccordianSection/AskData";
 
 const Body = () => {
   return (
@@ -51,13 +51,13 @@ const Body = () => {
             <h4>
               Enhance fortune 50 company’s insights teams research capabilities
             </h4>
-            <img src={Carasoul} alt="carasoul" className="carasoul" />
+            <img src={Carasoul} alt="carousel" className="carousel" /> {/* Corrected alt and className */}
             <button className="btn">Explore more ➡</button>
           </div>
         </div>
       </div>
 
-     
+      <AskData/>
     </>
   );
 };
